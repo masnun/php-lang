@@ -5,7 +5,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
 // Import
-use PHPLang\FeedParser\PlanetPHP;
+use PHPLang\DataSource\PlanetPHP;
 
 class TestCommand extends Command
 {
@@ -39,7 +39,7 @@ class TestCommand extends Command
     {
         $src = new PlanetPHP();
         //$this->line($src->parseFeed());
-        var_dump($src->parseFeed());
+        var_dump($src->getItems());
     }
 
 

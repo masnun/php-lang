@@ -4,14 +4,14 @@
  * URL: http://masnun.me
  */
 
-namespace PHPLang\FeedParser;
+namespace PHPLang\DataSource;
 
 class PlanetPHP
 {
     const FEED_URL = "http://www.planet-php.net/rss/";
     const SOURCE = "PlanetPHP";
 
-    public function parseFeed()
+    public function getItems()
     {
         $xml = new \SimpleXMLElement(self::FEED_URL, NULL, TRUE);
         foreach ($xml->channel->item as $item) {
