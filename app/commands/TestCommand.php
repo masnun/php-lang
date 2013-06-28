@@ -5,7 +5,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
 // Import
-use PHPLang\DataSource\PlanetPHP;
+use PHPLang\DataSource\StackOverflow;
 
 class TestCommand extends Command
 {
@@ -37,9 +37,8 @@ class TestCommand extends Command
      */
     public function fire()
     {
-        $src = new PlanetPHP();
-        //$this->line($src->parseFeed());
-        var_dump($src->getItems());
+        $src = new StackOverflow();
+        $src->getItems();
     }
 
 
