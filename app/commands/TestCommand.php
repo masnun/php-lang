@@ -5,7 +5,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
 // Import
-use PHPLang\DataSource\StackOverflow;
+use PHPLang\DataSource\Github;
 
 class TestCommand extends Command
 {
@@ -37,7 +37,7 @@ class TestCommand extends Command
      */
     public function fire()
     {
-        $src = new StackOverflow();
+        $src = new Github();
         $src->getItems();
     }
 
