@@ -32,12 +32,10 @@ class HackerNews
         $items = array();
 
         foreach ($data['results'] as $result) {
-            $item = array(
+            $items[] = array(
                 'title' => $result['item']['title'],
                 'url' => $result['item']['url']
             );
-
-            $items[] = $item;
         }
 
         return $items;

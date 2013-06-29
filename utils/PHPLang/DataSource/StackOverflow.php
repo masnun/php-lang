@@ -14,9 +14,16 @@ class StackOverflow
     public function getItems()
     {
         $xml = new \SimpleXMLElement(self::FEED_URL, NULL, TRUE);
+
+        $items = array();
+
         foreach ($xml->entry as $item) {
-            var_dump($item->title);
-            var_dump($item->link);
+            $items[] = array(
+                'title' => (string) $item->title,
+                'link' => (string) $item->link->attributes()['href'],
+            );
         }
+
+        return $items;
     }
 }

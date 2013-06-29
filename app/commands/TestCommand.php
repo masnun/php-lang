@@ -6,6 +6,10 @@ use Symfony\Component\Console\Input\InputArgument;
 
 // Import
 use PHPLang\DataSource\HackerNews;
+use PHPLang\DataSource\Github;
+use PHPLang\DataSource\PlanetPHP;
+use PHPLang\DataSource\StackOverflow;
+
 
 class TestCommand extends Command
 {

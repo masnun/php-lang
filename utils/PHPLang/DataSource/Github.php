@@ -27,6 +27,18 @@ class Github
 
         $data = json_decode($result, TRUE);
 
-        var_dump($data);
+        $items = array();
+
+
+        foreach ($data['repositories'] as $repo) {
+            $items[] = array(
+                'name' => $repo['username'] . " / " . $repo['name'],
+                'description' => $repo['description'],
+                'url' => $repo['url']
+            );
+        }
+
+        return $items;
+
     }
 }
