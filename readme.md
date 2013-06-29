@@ -8,7 +8,7 @@ at a common place. This tool will gather all information from web and manage tho
 
 ## Sources of information
 
-Documentation for the entire framework can be found on the [PHP official website](http://php.net).
+* [PHP official website](http://php.net)
 
 ## Framework used
 This tool have been developed by Laravel (version 4)
