@@ -11,19 +11,26 @@ class PlanetPHP
     const FEED_URL = "http://www.planet-php.net/rss/";
     const SOURCE = "PlanetPHP";
 
-    public function getItems()
+    public function scrape()
     {
         $xml = new \SimpleXMLElement(self::FEED_URL, NULL, TRUE);
 
         $items = array();
 
         foreach ($xml->channel->item as $item) {
-            $items[] = array(
-                'title' => (string) $item->title,
-                'link' => (string) $item->link,
-            );
+            $title = (string)$item->title;
+            $url = (string)$item->link;
+
+            if (!\Article::exists($url)) {
+                $article = new \Article();
+                $article->title = $title;
+                $article->url = $url;
+                $article->save();
+            }
+
         }
 
         return $items;
     }
+
 }

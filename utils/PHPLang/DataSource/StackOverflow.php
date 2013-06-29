@@ -20,7 +20,7 @@ class StackOverflow
         foreach ($xml->entry as $item) {
             $items[] = array(
                 'title' => (string) $item->title,
-                'link' => (string) $item->link->attributes()['href'],
+                'url' => (string) $item->link->attributes()['href'],
             );
         }
 

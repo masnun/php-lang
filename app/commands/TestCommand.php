@@ -41,9 +41,8 @@ class TestCommand extends Command
      */
     public function fire()
     {
-        $src = new HackerNews();
-        $items = $src->getItems();
-        var_dump($items);
+        $src = new PlanetPHP();
+        $src->scrape();
     }
 
 
