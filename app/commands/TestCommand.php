@@ -5,7 +5,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
 // Import
-use PHPLang\DataSource\Github;
+use PHPLang\DataSource\HackerNews;
 
 class TestCommand extends Command
 {
@@ -37,8 +37,9 @@ class TestCommand extends Command
      */
     public function fire()
     {
-        $src = new Github();
-        $src->getItems();
+        $src = new HackerNews();
+        $items = $src->getItems();
+        var_dump($items);
     }
 
 
